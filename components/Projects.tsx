@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { projects } from "@/lib/projects";
 
@@ -71,26 +72,18 @@ export default function Projects() {
                 style={{
                   position: "relative",
                   aspectRatio: "16/10",
-                  background: "rgba(255,255,255,0.05)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
+                  background: "#fff",
+                  overflow: "hidden",
                   borderBottom: "1px solid rgba(255,255,255,0.12)",
                 }}
               >
-                <span
-                  style={{
-                    fontFamily: "var(--font-jetbrains), monospace",
-                    fontSize: 11,
-                    letterSpacing: "0.1em",
-                    color: "#8FB4EC",
-                    border: "1px solid rgba(143,180,236,0.45)",
-                    padding: "7px 12px",
-                    borderRadius: 4,
-                  }}
-                >
-                  [ {project.cardLabel} ]
-                </span>
+                <Image
+                  src={project.cardImage}
+                  alt={`${project.title} — extrait de plan technique`}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 530px"
+                  style={{ objectFit: "cover", objectPosition: "top" }}
+                />
                 <span
                   style={{
                     position: "absolute",

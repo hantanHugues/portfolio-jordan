@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
@@ -144,6 +145,61 @@ export default async function ProjectPage({
           </div>
         </section>
 
+        <section style={{ maxWidth: 900, margin: "0 auto", padding: "64px 40px 0" }}>
+          <h2
+            style={{
+              fontFamily: "var(--font-jetbrains), monospace",
+              fontSize: 11,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "#2E63C4",
+              margin: "0 0 20px",
+            }}
+          >
+            Plans &amp; extraits techniques
+          </h2>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: project.gallery.length > 1 ? "repeat(2,1fr)" : "1fr",
+              gap: 24,
+            }}
+          >
+            {project.gallery.map((item) => (
+              <div key={item.src}>
+                <div
+                  style={{
+                    position: "relative",
+                    aspectRatio: "4/3",
+                    background: "#fff",
+                    border: "1px solid #E0E8F3",
+                    borderRadius: 4,
+                    overflow: "hidden",
+                  }}
+                >
+                  <Image
+                    src={item.src}
+                    alt={item.caption}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 420px"
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-jetbrains), monospace",
+                    fontSize: 12,
+                    color: "#5C6B82",
+                    marginTop: 10,
+                  }}
+                >
+                  {item.caption}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section style={{ maxWidth: 900, margin: "0 auto", padding: "64px 40px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "0.9fr 1.1fr", gap: 48, alignItems: "start" }}>
             <div>
@@ -265,8 +321,8 @@ export default async function ProjectPage({
               ))}
             </div>
             <p style={{ fontSize: 13, lineHeight: 1.6, color: "#5C6B82", marginTop: 20 }}>
-              Plans techniques disponibles sur demande (données de localisation et de maîtrise d&apos;ouvrage
-              anonymisées ici par confidentialité).
+              Extraits de plans ci-dessus ; dossier complet disponible sur demande (données de
+              localisation et de maîtrise d&apos;ouvrage anonymisées ici par confidentialité).
             </p>
           </div>
         </section>

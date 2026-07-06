@@ -7,6 +7,8 @@ export type Project = {
   type: string;
   tools: string[];
   cardLabel: string;
+  cardImage: string;
+  gallery: { src: string; caption: string }[];
   summary: string;
   context: string;
   mission: string[];
@@ -24,6 +26,11 @@ export const projects: Project[] = [
     type: "Étude d'exécution",
     tools: ["AutoCAD", "Graitec"],
     cardLabel: "plan de fondation",
+    cardImage: "/projets/maison-individuelle-fort-mahon-plage/01-plan-fondation.png",
+    gallery: [
+      { src: "/projets/maison-individuelle-fort-mahon-plage/01-plan-fondation.png", caption: "Plan de fondation (AutoCAD)" },
+      { src: "/projets/maison-individuelle-fort-mahon-plage/02-ferraillage-poteau.png", caption: "Carnet de ferraillage — poteau (Graitec)" },
+    ],
     summary:
       "Définition des travaux de gros œuvre d'une maison individuelle : fondations, poutres, poteaux, planchers et murs porteurs.",
     context:
@@ -50,6 +57,11 @@ export const projects: Project[] = [
     type: "Renforcement structurel",
     tools: ["AutoCAD", "Graitec"],
     cardLabel: "coupe existant / projet",
+    cardImage: "/projets/trois-ouvertures-guesnain/01-plan-rdc-projet.png",
+    gallery: [
+      { src: "/projets/trois-ouvertures-guesnain/01-plan-rdc-projet.png", caption: "Plan RDC — état projet" },
+      { src: "/projets/trois-ouvertures-guesnain/02-ferraillage-poutre.png", caption: "Ferraillage — poutre de reprise (Graitec)" },
+    ],
     summary:
       "Étude des modifications structurelles nécessaires pour créer trois nouvelles ouvertures dans un bâtiment existant, en garantissant sa stabilité.",
     context:
@@ -76,6 +88,10 @@ export const projects: Project[] = [
     type: "Extension · étude BA",
     tools: ["AutoCAD", "Graitec"],
     cardLabel: "plan de fondation",
+    cardImage: "/projets/extension-ba-wannehain/01-plan-fondation.png",
+    gallery: [
+      { src: "/projets/extension-ba-wannehain/01-plan-fondation.png", caption: "Plan de fondation" },
+    ],
     summary:
       "Dimensionnement des éléments porteurs d'une extension à partir du rapport géotechnique et des descentes de charges fournies.",
     context:
@@ -102,6 +118,10 @@ export const projects: Project[] = [
     type: "Charpente bois",
     tools: ["AutoCAD"],
     cardLabel: "vue en plan ossature",
+    cardImage: "/projets/charpente-bois-ronchin/01-structure-primaire.png",
+    gallery: [
+      { src: "/projets/charpente-bois-ronchin/01-structure-primaire.png", caption: "Vue en plan — structure primaire" },
+    ],
     summary:
       "Première étude en structure bois : faisabilité d'une nouvelle charpente et reprise des charges vers l'existant.",
     context:
@@ -129,6 +149,11 @@ export const projects: Project[] = [
     type: "Extension · étude BA — projet fil rouge",
     tools: ["AutoCAD", "Graitec"],
     cardLabel: "méthodologie complète",
+    cardImage: "/projets/extension-ba-saint-python/01-plan-fondation.png",
+    gallery: [
+      { src: "/projets/extension-ba-saint-python/01-plan-fondation.png", caption: "Plan de fondation" },
+      { src: "/projets/extension-ba-saint-python/02-ferraillage-dalle.png", caption: "Ferraillage dalle — nappe inférieure (Graitec)" },
+    ],
     summary:
       "Projet suivi de bout en bout : lecture des plans, analyse géotechnique, descente de charges, croquis, plans structurels et ferraillage de dalle.",
     context:
@@ -160,6 +185,10 @@ export const projects: Project[] = [
     type: "Diagnostic & réparation structurelle",
     tools: ["AutoCAD"],
     cardLabel: "vue de face existant / projet",
+    cardImage: "/projets/reprise-structure-bois-lille/01-vue-de-face-projet.png",
+    gallery: [
+      { src: "/projets/reprise-structure-bois-lille/01-vue-de-face-projet.png", caption: "Vue de face — état projet" },
+    ],
     summary:
       "Diagnostic d'une poutre et de solives bois dégradées par la pourriture pour un syndicat de copropriétaires, et conception de leur remplacement.",
     context:
@@ -185,6 +214,10 @@ export const projects: Project[] = [
     type: "Surélévation · ossature bois",
     tools: ["AutoCAD"],
     cardLabel: "façade existant / projet",
+    cardImage: "/projets/surelevation-maison-mitoyenne-lille/01-coupe-a-a.png",
+    gallery: [
+      { src: "/projets/surelevation-maison-mitoyenne-lille/01-coupe-a-a.png", caption: "Coupe A-A" },
+    ],
     summary:
       "Conception structurelle d'une surélévation en ossature bois : planchers, chaînages béton armé de liaison et détails d'ancrage sur mur mitoyen.",
     context:
