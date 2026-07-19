@@ -1,4 +1,17 @@
+"use client";
+
+import { useState } from "react";
+
+const links = [
+  { href: "#about", label: "À propos" },
+  { href: "#projets", label: "Projets" },
+  { href: "#skills", label: "Compétences" },
+  { href: "#parcours", label: "Parcours" },
+];
+
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
   return (
     <header
       style={{
@@ -14,7 +27,7 @@ export default function Header() {
         style={{
           maxWidth: 1180,
           margin: "0 auto",
-          padding: "16px 40px",
+          padding: "var(--header-pad)",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -23,6 +36,7 @@ export default function Header() {
       >
         <a
           href="#accueil"
+          onClick={() => setOpen(false)}
           style={{
             display: "flex",
             alignItems: "center",
@@ -44,6 +58,7 @@ export default function Header() {
               fontWeight: 600,
               fontSize: 18,
               color: "#fff",
+              flexShrink: 0,
             }}
           >
             J
@@ -72,59 +87,23 @@ export default function Header() {
             </span>
           </span>
         </a>
-        <nav style={{ display: "flex", alignItems: "center", gap: 4 }}>
-          <a
-            href="#about"
-            className="nav-link"
-            style={{
-              padding: "8px 14px",
-              fontSize: 13.5,
-              fontWeight: 500,
-              color: "rgba(255,255,255,0.82)",
-              textDecoration: "none",
-            }}
-          >
-            À propos
-          </a>
-          <a
-            href="#projets"
-            className="nav-link"
-            style={{
-              padding: "8px 14px",
-              fontSize: 13.5,
-              fontWeight: 500,
-              color: "rgba(255,255,255,0.82)",
-              textDecoration: "none",
-            }}
-          >
-            Projets
-          </a>
-          <a
-            href="#skills"
-            className="nav-link"
-            style={{
-              padding: "8px 14px",
-              fontSize: 13.5,
-              fontWeight: 500,
-              color: "rgba(255,255,255,0.82)",
-              textDecoration: "none",
-            }}
-          >
-            Compétences
-          </a>
-          <a
-            href="#parcours"
-            className="nav-link"
-            style={{
-              padding: "8px 14px",
-              fontSize: 13.5,
-              fontWeight: 500,
-              color: "rgba(255,255,255,0.82)",
-              textDecoration: "none",
-            }}
-          >
-            Parcours
-          </a>
+        <nav className="desktop-nav" style={{ alignItems: "center", gap: 4 }}>
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="nav-link"
+              style={{
+                padding: "8px 14px",
+                fontSize: 13.5,
+                fontWeight: 500,
+                color: "rgba(255,255,255,0.82)",
+                textDecoration: "none",
+              }}
+            >
+              {link.label}
+            </a>
+          ))}
           <a
             href="#contact"
             className="nav-contact"
@@ -142,7 +121,110 @@ export default function Header() {
             Contact
           </a>
         </nav>
+        <button
+          type="button"
+          className="menu-toggle"
+          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            width: 40,
+            height: 40,
+            flexShrink: 0,
+            background: "transparent",
+            border: "1px solid rgba(255,255,255,0.24)",
+            borderRadius: 6,
+          }}
+        >
+          <span style={{ position: "relative", width: 18, height: 14, display: "block" }}>
+            <span
+              style={{
+                position: "absolute",
+                top: open ? 6 : 0,
+                left: 0,
+                width: 18,
+                height: 2,
+                background: "#fff",
+                transform: open ? "rotate(45deg)" : "none",
+                transition: "all 0.2s",
+              }}
+            />
+            <span
+              style={{
+                position: "absolute",
+                top: 6,
+                left: 0,
+                width: 18,
+                height: 2,
+                background: "#fff",
+                opacity: open ? 0 : 1,
+                transition: "all 0.2s",
+              }}
+            />
+            <span
+              style={{
+                position: "absolute",
+                top: open ? 6 : 12,
+                left: 0,
+                width: 18,
+                height: 2,
+                background: "#fff",
+                transform: open ? "rotate(-45deg)" : "none",
+                transition: "all 0.2s",
+              }}
+            />
+          </span>
+        </button>
       </div>
+      {open && (
+        <nav
+          className="mobile-nav"
+          style={{
+            flexDirection: "column",
+            padding: "4px 20px 20px",
+            gap: 2,
+            borderTop: "1px solid rgba(255,255,255,0.12)",
+          }}
+        >
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="nav-link"
+              onClick={() => setOpen(false)}
+              style={{
+                padding: "13px 4px",
+                fontSize: 15,
+                fontWeight: 500,
+                color: "rgba(255,255,255,0.85)",
+                textDecoration: "none",
+              }}
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="#contact"
+            className="nav-contact"
+            onClick={() => setOpen(false)}
+            style={{
+              marginTop: 10,
+              padding: "13px 16px",
+              textAlign: "center",
+              fontSize: 14,
+              fontWeight: 600,
+              background: "#2E63C4",
+              color: "#fff",
+              borderRadius: 6,
+              textDecoration: "none",
+            }}
+          >
+            Contact
+          </a>
+        </nav>
+      )}
     </header>
   );
 }

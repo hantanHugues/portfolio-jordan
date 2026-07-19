@@ -5,7 +5,7 @@ export default function Footer() {
         style={{
           maxWidth: 1180,
           margin: "0 auto",
-          padding: 40,
+          padding: "var(--footer-pad)",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",

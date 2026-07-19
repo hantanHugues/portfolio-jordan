@@ -42,7 +42,7 @@ export default async function ProjectPage({
       <Header />
       <main style={{ flex: 1 }}>
         <section style={{ background: "#0F2A57", color: "#fff" }}>
-          <div style={{ maxWidth: 900, margin: "0 auto", padding: "64px 40px 56px" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto", padding: "var(--detail-hero-pad)" }}>
             <Link
               href="/#projets"
               className="contact-link"
@@ -145,7 +145,7 @@ export default async function ProjectPage({
           </div>
         </section>
 
-        <section style={{ maxWidth: 900, margin: "0 auto", padding: "64px 40px 0" }}>
+        <section style={{ maxWidth: 900, margin: "0 auto", padding: "var(--detail-section-pad-top0)" }}>
           <h2
             style={{
               fontFamily: "var(--font-jetbrains), monospace",
@@ -161,8 +161,8 @@ export default async function ProjectPage({
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: project.gallery.length > 1 ? "repeat(2,1fr)" : "1fr",
-              gap: 24,
+              gridTemplateColumns: project.gallery.length > 1 ? "var(--grid-2col)" : "1fr",
+              gap: "var(--gap-cards)",
             }}
           >
             {project.gallery.map((item) => (
@@ -200,8 +200,8 @@ export default async function ProjectPage({
           </div>
         </section>
 
-        <section style={{ maxWidth: 900, margin: "0 auto", padding: "64px 40px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "0.9fr 1.1fr", gap: 48, alignItems: "start" }}>
+        <section style={{ maxWidth: 900, margin: "0 auto", padding: "var(--detail-section-pad)" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "var(--grid-detail)", gap: "var(--gap-detail-grid)", alignItems: "start" }}>
             <div>
               <h2
                 style={{
@@ -278,7 +278,7 @@ export default async function ProjectPage({
         </section>
 
         <section style={{ background: "#fff", borderTop: "1px solid #E0E8F3", borderBottom: "1px solid #E0E8F3" }}>
-          <div style={{ maxWidth: 900, margin: "0 auto", padding: "56px 40px" }}>
+          <div style={{ maxWidth: 900, margin: "0 auto", padding: "var(--gallery-section-pad)" }}>
             <h2
               style={{
                 fontFamily: "var(--font-jetbrains), monospace",
@@ -327,7 +327,7 @@ export default async function ProjectPage({
           </div>
         </section>
 
-        <section style={{ maxWidth: 900, margin: "0 auto", padding: "48px 40px 96px" }}>
+        <section style={{ maxWidth: 900, margin: "0 auto", padding: "var(--detail-footer-pad)" }}>
           <div style={{ display: "flex", justifyContent: "space-between", gap: 24, flexWrap: "wrap" }}>
             <Link
               href={`/projets/${prev.slug}`}
@@ -338,8 +338,8 @@ export default async function ProjectPage({
             </Link>
             <Link
               href={`/projets/${next.slug}`}
-              className="contact-link"
-              style={{ fontSize: 14, color: "#11223D", textDecoration: "none", textAlign: "right" }}
+              className="contact-link contact-row-value"
+              style={{ fontSize: 14, color: "#11223D", textDecoration: "none" }}
             >
               {next.title} →
             </Link>

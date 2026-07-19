@@ -30,7 +30,7 @@ const skillGroups = [
 
 export default function Skills() {
   return (
-    <section id="skills" style={{ maxWidth: 1180, margin: "0 auto", padding: "96px 40px" }}>
+    <section id="skills" style={{ maxWidth: 1180, margin: "0 auto", padding: "var(--section-pad)" }}>
       <div
         style={{
           display: "flex",
@@ -64,7 +64,7 @@ export default function Skills() {
           Compétences
         </h2>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 24 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "var(--grid-2col)", gap: "var(--gap-cards)" }}>
         {skillGroups.map((group) => (
           <div
             key={group.idx}

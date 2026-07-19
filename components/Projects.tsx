@@ -5,7 +5,7 @@ import { projects } from "@/lib/projects";
 export default function Projects() {
   return (
     <section id="projets" style={{ background: "#0F2A57", color: "#fff" }}>
-      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "96px 40px" }}>
+      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "var(--section-pad)" }}>
         <div
           style={{
             display: "flex",
@@ -52,7 +52,7 @@ export default function Projects() {
           Structure : fondations, coupes, ferraillage et charpente bois — du croquis à la
           validation. Détails de localisation et clients anonymisés par confidentialité.
         </p>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 40 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "var(--grid-2col)", gap: "var(--gap-project-cards)" }}>
           {projects.map((project) => (
             <Link
               key={project.slug}

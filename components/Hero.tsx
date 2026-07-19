@@ -1,3 +1,4 @@
+import Image from "next/image";
 import CornerTicks from "./CornerTicks";
 
 export default function Hero() {
@@ -21,15 +22,15 @@ export default function Hero() {
           pointerEvents: "none",
         }}
       />
-      <div style={{ position: "relative", maxWidth: 1180, margin: "0 auto", padding: "0 40px" }}>
+      <div style={{ position: "relative", maxWidth: 1180, margin: "0 auto", padding: "var(--hero-pad-x)" }}>
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "1.15fr 0.85fr",
-            gap: 56,
+            gridTemplateColumns: "var(--grid-hero)",
+            gap: "var(--gap-hero)",
             alignItems: "center",
-            minHeight: "calc(100vh - 71px)",
-            padding: "64px 0",
+            minHeight: "var(--hero-min-h)",
+            padding: "var(--hero-inner-pad)",
           }}
         >
           <div>
@@ -109,7 +110,8 @@ export default function Hero() {
             <div
               style={{
                 display: "flex",
-                gap: 40,
+                flexWrap: "wrap",
+                gap: "var(--gap-stats)",
                 marginTop: 56,
                 paddingTop: 28,
                 borderTop: "1px solid rgba(255,255,255,0.16)",
@@ -196,32 +198,25 @@ export default function Hero() {
                 aspectRatio: "3/4",
                 border: "1px solid rgba(255,255,255,0.28)",
                 background: "rgba(255,255,255,0.06)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
                 borderRadius: 4,
+                overflow: "hidden",
               }}
             >
+              <Image
+                src="/images/hero-portrait.jpg"
+                alt="Jordan Houenou"
+                fill
+                priority
+                sizes="(max-width: 860px) 100vw, 460px"
+                style={{ objectFit: "cover" }}
+              />
               <CornerTicks color="#8FB4EC" />
-              <span
-                style={{
-                  fontFamily: "var(--font-jetbrains), monospace",
-                  fontSize: 11,
-                  letterSpacing: "0.12em",
-                  color: "#8FB4EC",
-                  border: "1px solid rgba(143,180,236,0.5)",
-                  padding: "7px 12px",
-                  borderRadius: 4,
-                }}
-              >
-                [ photo · portrait / chantier ]
-              </span>
             </div>
             <div
               style={{
                 position: "absolute",
-                bottom: -14,
-                right: -14,
+                bottom: "var(--quote-offset)",
+                right: "var(--quote-offset)",
                 background: "#2E63C4",
                 color: "#fff",
                 padding: "14px 18px",

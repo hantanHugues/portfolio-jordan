@@ -49,7 +49,7 @@ export default function Timeline() {
       id="parcours"
       style={{ background: "#fff", borderTop: "1px solid #E0E8F3", borderBottom: "1px solid #E0E8F3" }}
     >
-      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "96px 40px" }}>
+      <div style={{ maxWidth: 1180, margin: "0 auto", padding: "var(--section-pad)" }}>
         <div
           style={{
             display: "flex",
@@ -90,8 +90,8 @@ export default function Timeline() {
               style={{
                 position: "relative",
                 display: "grid",
-                gridTemplateColumns: "110px 1fr",
-                gap: 32,
+                gridTemplateColumns: "var(--grid-timeline-item)",
+                gap: "var(--gap-timeline)",
                 padding: "28px 0",
                 borderTop: "1px solid #E0E8F3",
               }}

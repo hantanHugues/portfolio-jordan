@@ -1,3 +1,4 @@
+import Image from "next/image";
 import CornerTicks from "./CornerTicks";
 
 const facts = [
@@ -9,7 +10,7 @@ const facts = [
 
 export default function About() {
   return (
-    <section id="about" style={{ maxWidth: 1180, margin: "0 auto", padding: "96px 40px" }}>
+    <section id="about" style={{ maxWidth: 1180, margin: "0 auto", padding: "var(--section-pad)" }}>
       <div
         style={{
           display: "flex",
@@ -46,8 +47,8 @@ export default function About() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "0.9fr 1.1fr",
-          gap: 64,
+          gridTemplateColumns: "var(--grid-about)",
+          gap: "var(--gap-two-col)",
           alignItems: "start",
         }}
       >
@@ -57,26 +58,18 @@ export default function About() {
             aspectRatio: "4/5",
             border: "1px solid #D6E0EE",
             background: "#EEF3FA",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
             borderRadius: 4,
+            overflow: "hidden",
           }}
         >
+          <Image
+            src="/images/about-portrait.jpg"
+            alt="Jordan Houenou — portrait"
+            fill
+            sizes="(max-width: 860px) 100vw, 500px"
+            style={{ objectFit: "cover" }}
+          />
           <CornerTicks color="#2E63C4" />
-          <span
-            style={{
-              fontFamily: "var(--font-jetbrains), monospace",
-              fontSize: 11,
-              letterSpacing: "0.1em",
-              color: "#2E63C4",
-              border: "1px solid #C3D4EC",
-              padding: "6px 11px",
-              borderRadius: 4,
-            }}
-          >
-            [ portrait ]
-          </span>
         </div>
         <div>
           <p

@@ -81,6 +81,14 @@ const jobs = [
     page: 7,
     cropHeight: 1110,
   },
+  {
+    slug: "surelevation-maison-mitoyenne-lille",
+    name: "02-ferraillage-chainage.png",
+    pdf: "A4 Plans du chainage BA de 22 x 31.3 cm ht.pdf",
+    page: 1,
+    cropHeight: null,
+    rotate: -90,
+  },
 ];
 
 for (const job of jobs) {
@@ -101,8 +109,11 @@ for (const job of jobs) {
   const outPath = path.join(outDir, job.name);
 
   let pipeline = sharp(renderedPath);
+  if (job.rotate) {
+    pipeline = pipeline.rotate(job.rotate);
+  }
   if (job.cropHeight) {
-    const meta = await sharp(renderedPath).metadata();
+    const meta = await pipeline.clone().metadata();
     pipeline = pipeline.extract({ left: 0, top: 0, width: meta.width, height: job.cropHeight });
   }
   await pipeline.png({ compressionLevel: 9 }).toFile(outPath);

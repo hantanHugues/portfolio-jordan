@@ -2,7 +2,7 @@
 
 export default function Contact() {
   return (
-    <section id="contact" style={{ maxWidth: 1180, margin: "0 auto", padding: "96px 40px" }}>
+    <section id="contact" style={{ maxWidth: 1180, margin: "0 auto", padding: "var(--section-pad)" }}>
       <div
         style={{
           display: "flex",
@@ -39,8 +39,8 @@ export default function Contact() {
       <div
         style={{
           display: "grid",
-          gridTemplateColumns: "0.85fr 1.15fr",
-          gap: 64,
+          gridTemplateColumns: "var(--grid-contact)",
+          gap: "var(--gap-two-col)",
           alignItems: "start",
         }}
       >
@@ -60,11 +60,9 @@ export default function Contact() {
           <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
             <a
               href="mailto:Sumason0704@gmail.com"
-              className="contact-link"
+              className="contact-link contact-row"
               style={{
                 display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
                 padding: "18px 0",
                 borderTop: "1px solid #E0E8F3",
                 textDecoration: "none",
@@ -86,11 +84,9 @@ export default function Contact() {
             </a>
             <a
               href="tel:+33759872501"
-              className="contact-link"
+              className="contact-link contact-row"
               style={{
                 display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
                 padding: "18px 0",
                 borderTop: "1px solid #E0E8F3",
                 textDecoration: "none",
@@ -111,11 +107,9 @@ export default function Contact() {
               <span style={{ fontSize: 15, fontWeight: 500 }}>+33 7 59 87 25 01</span>
             </a>
             <div
-              className="contact-link"
+              className="contact-link contact-row"
               style={{
                 display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
                 padding: "18px 0",
                 borderTop: "1px solid #E0E8F3",
                 borderBottom: "1px solid #E0E8F3",
@@ -133,7 +127,7 @@ export default function Contact() {
               >
                 Adresse
               </span>
-              <span style={{ fontSize: 15, fontWeight: 500, textAlign: "right" }}>
+              <span className="contact-row-value" style={{ fontSize: 15, fontWeight: 500 }}>
                 1326 rue de l&apos;université, 62400 Béthune
               </span>
             </div>
@@ -152,7 +146,7 @@ export default function Contact() {
             boxShadow: "0 1px 3px rgba(15,42,87,0.05)",
           }}
         >
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 22 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "var(--grid-2col)", gap: 22 }}>
             <label style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               <span
                 style={{

@@ -217,6 +217,7 @@ export const projects: Project[] = [
     cardImage: "/projets/surelevation-maison-mitoyenne-lille/01-coupe-a-a.png",
     gallery: [
       { src: "/projets/surelevation-maison-mitoyenne-lille/01-coupe-a-a.png", caption: "Coupe A-A" },
+      { src: "/projets/surelevation-maison-mitoyenne-lille/02-ferraillage-chainage.png", caption: "Carnet de ferraillage — chaînage BA 22×31,3 cm (Graitec)" },
     ],
     summary:
       "Conception structurelle d'une surélévation en ossature bois : planchers, chaînages béton armé de liaison et détails d'ancrage sur mur mitoyen.",
@@ -233,6 +234,7 @@ export const projects: Project[] = [
       "Façade arrière — existante et projet",
       "Coupes A-A et B-B",
       "5 détails techniques d'assemblage et d'ancrage",
+      "Carnet de ferraillage — chaînage béton armé 22×31,3 cm (Graitec)",
     ],
     highlight:
       "Le dossier le plus fourni du stage (11 planches) : de la démolition partielle de l'existant jusqu'aux détails d'ancrage millimétrés sur mur mitoyen.",
