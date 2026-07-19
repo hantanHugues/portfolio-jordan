@@ -14,7 +14,11 @@ function handleContactSubmit(e: FormEvent<HTMLFormElement>) {
   const subject = `Contact portfolio — ${name || "sans nom"}`;
   const body = `Nom : ${name}\nEmail : ${email}\n\n${message}`;
 
-  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const gmailComposeUrl =
+    `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT_EMAIL)}` +
+    `&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  window.open(gmailComposeUrl, "_blank", "noopener,noreferrer");
 }
 
 export default function Contact() {
@@ -266,7 +270,7 @@ export default function Contact() {
             Envoyer le message
           </button>
           <p style={{ fontSize: 12.5, color: "#5C6B82", margin: "-10px 0 0" }}>
-            Ouvre votre messagerie avec le message pré-rempli, à l&apos;attention de {CONTACT_EMAIL}.
+            Ouvre un nouvel onglet Gmail avec le message pré-rempli, à l&apos;attention de {CONTACT_EMAIL}.
           </p>
         </form>
       </div>
