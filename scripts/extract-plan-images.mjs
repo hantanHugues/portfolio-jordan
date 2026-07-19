@@ -4,6 +4,7 @@ import path from "node:path";
 import sharp from "sharp";
 
 const PDF_DIR = "C:\\Users\\HP ELITEBOOK\\Documents\\projet cv\\pdf";
+const SLIDES_DIR = "C:\\Users\\HP ELITEBOOK\\Documents\\projet cv\\pdf\\rapport-ppt-slides";
 const OUT_DIR = path.resolve("public/projets");
 const TMP_DIR = path.resolve("scripts/tmp-render/pipeline");
 
@@ -119,6 +120,39 @@ for (const job of jobs) {
   await pipeline.png({ compressionLevel: 9 }).toFile(outPath);
 
   rmSync(renderedPath);
+  console.log("wrote", outPath);
+}
+
+// Real site photos, cropped out of the internship report slides (rapport-ppt-slides/*.png).
+// Crop boxes exclude every caption/title/address label — photo content only.
+const photoJobs = [
+  {
+    slug: "extension-ba-wannehain",
+    name: "02-photo-site.png",
+    slide: "6.png",
+    crop: { left: 113, top: 320, width: 324, height: 243 },
+  },
+  {
+    slug: "charpente-bois-ronchin",
+    name: "02-photo-chantier.png",
+    slide: "6.png",
+    crop: { left: 605, top: 320, width: 332, height: 243 },
+  },
+  {
+    slug: "extension-ba-saint-python",
+    name: "03-photo-site.png",
+    slide: "7.png",
+    crop: { left: 281, top: 270, width: 493, height: 273 },
+  },
+];
+
+for (const job of photoJobs) {
+  const slidePath = path.join(SLIDES_DIR, job.slide);
+  const outDir = path.join(OUT_DIR, job.slug);
+  mkdirSync(outDir, { recursive: true });
+  const outPath = path.join(outDir, job.name);
+
+  await sharp(slidePath).extract(job.crop).png({ compressionLevel: 9 }).toFile(outPath);
   console.log("wrote", outPath);
 }
 

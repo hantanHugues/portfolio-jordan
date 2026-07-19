@@ -88,8 +88,9 @@ export const projects: Project[] = [
     type: "Extension · étude BA",
     tools: ["AutoCAD", "Graitec"],
     cardLabel: "plan de fondation",
-    cardImage: "/projets/extension-ba-wannehain/01-plan-fondation.png",
+    cardImage: "/projets/extension-ba-wannehain/02-photo-site.png",
     gallery: [
+      { src: "/projets/extension-ba-wannehain/02-photo-site.png", caption: "Vue du site — existant" },
       { src: "/projets/extension-ba-wannehain/01-plan-fondation.png", caption: "Plan de fondation" },
     ],
     summary:
@@ -102,6 +103,7 @@ export const projects: Project[] = [
       "Réalisation des plans structurels sur AutoCAD puis des plans de ferraillage sur Graitec, avec validation et ajustements successifs.",
     ],
     deliverables: [
+      "Photographie de site — existant",
       "Plan de fondation",
       "Plan du plancher haut RDC (solivage bois)",
       "Coupes A-A et B-B",
@@ -118,8 +120,9 @@ export const projects: Project[] = [
     type: "Charpente bois",
     tools: ["AutoCAD"],
     cardLabel: "vue en plan ossature",
-    cardImage: "/projets/charpente-bois-ronchin/01-structure-primaire.png",
+    cardImage: "/projets/charpente-bois-ronchin/02-photo-chantier.png",
     gallery: [
+      { src: "/projets/charpente-bois-ronchin/02-photo-chantier.png", caption: "Vue chantier — charpente existante avant reprise" },
       { src: "/projets/charpente-bois-ronchin/01-structure-primaire.png", caption: "Vue en plan — structure primaire" },
     ],
     summary:
@@ -132,6 +135,7 @@ export const projects: Project[] = [
       "Réalisation des vues en plan (existant / projet), des coupes et des détails d'assemblage sur AutoCAD, à partir d'un modèle de plan transmis par le bureau d'études.",
     ],
     deliverables: [
+      "Photographie de chantier — charpente existante",
       "Vue en plan existant et projet",
       "Vue en plan — structure primaire",
       "Coupes A-A et B-B, existant et projet",
@@ -149,8 +153,9 @@ export const projects: Project[] = [
     type: "Extension · étude BA — projet fil rouge",
     tools: ["AutoCAD", "Graitec"],
     cardLabel: "méthodologie complète",
-    cardImage: "/projets/extension-ba-saint-python/01-plan-fondation.png",
+    cardImage: "/projets/extension-ba-saint-python/03-photo-site.png",
     gallery: [
+      { src: "/projets/extension-ba-saint-python/03-photo-site.png", caption: "Vue du site — zone d'extension" },
       { src: "/projets/extension-ba-saint-python/01-plan-fondation.png", caption: "Plan de fondation" },
       { src: "/projets/extension-ba-saint-python/02-ferraillage-dalle.png", caption: "Ferraillage dalle — nappe inférieure (Graitec)" },
     ],
