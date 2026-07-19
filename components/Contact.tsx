@@ -1,5 +1,22 @@
 "use client";
 
+import type { FormEvent } from "react";
+
+const CONTACT_EMAIL = "Sumason0704@gmail.com";
+
+function handleContactSubmit(e: FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+  const data = new FormData(e.currentTarget);
+  const name = data.get("name")?.toString().trim() ?? "";
+  const email = data.get("email")?.toString().trim() ?? "";
+  const message = data.get("message")?.toString().trim() ?? "";
+
+  const subject = `Contact portfolio — ${name || "sans nom"}`;
+  const body = `Nom : ${name}\nEmail : ${email}\n\n${message}`;
+
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 export default function Contact() {
   return (
     <section id="contact" style={{ maxWidth: 1180, margin: "0 auto", padding: "var(--section-pad)" }}>
@@ -59,7 +76,7 @@ export default function Contact() {
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 0 }}>
             <a
-              href="mailto:Sumason0704@gmail.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="contact-link contact-row"
               style={{
                 display: "flex",
@@ -80,7 +97,7 @@ export default function Contact() {
               >
                 Email
               </span>
-              <span style={{ fontSize: 15, fontWeight: 500 }}>Sumason0704@gmail.com</span>
+              <span style={{ fontSize: 15, fontWeight: 500 }}>{CONTACT_EMAIL}</span>
             </a>
             <a
               href="tel:+33759872501"
@@ -134,7 +151,7 @@ export default function Contact() {
           </div>
         </div>
         <form
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleContactSubmit}
           style={{
             display: "flex",
             flexDirection: "column",
@@ -161,6 +178,8 @@ export default function Contact() {
               </span>
               <input
                 type="text"
+                name="name"
+                required
                 placeholder="Votre nom"
                 className="form-input"
                 style={{
@@ -187,6 +206,8 @@ export default function Contact() {
               </span>
               <input
                 type="email"
+                name="email"
+                required
                 placeholder="vous@email.com"
                 className="form-input"
                 style={{
@@ -214,6 +235,8 @@ export default function Contact() {
             </span>
             <textarea
               rows={5}
+              name="message"
+              required
               placeholder="Votre message…"
               className="form-textarea"
               style={{
@@ -242,6 +265,9 @@ export default function Contact() {
           >
             Envoyer le message
           </button>
+          <p style={{ fontSize: 12.5, color: "#5C6B82", margin: "-10px 0 0" }}>
+            Ouvre votre messagerie avec le message pré-rempli, à l&apos;attention de {CONTACT_EMAIL}.
+          </p>
         </form>
       </div>
     </section>
