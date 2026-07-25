@@ -48,9 +48,10 @@ export default function Projects() {
             margin: "0 0 56px",
           }}
         >
-          Sept études structurelles réalisées en bureau d&apos;études durant mon stage chez JKF
-          Structure : fondations, coupes, ferraillage et charpente bois — du croquis à la
-          validation. Détails de localisation et clients anonymisés par confidentialité.
+          Onze études structurelles réalisées en bureau d&apos;études durant mon stage chez JKF
+          Structure : fondations, coupes, ferraillage, charpente bois et diagnostic de l&apos;existant
+          — du croquis à la validation. Détails de localisation et clients anonymisés par
+          confidentialité.
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "var(--grid-2col)", gap: "var(--gap-project-cards)" }}>
           {projects.map((project) => (

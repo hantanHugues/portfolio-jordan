@@ -90,6 +90,71 @@ const jobs = [
     cropHeight: null,
     rotate: -90,
   },
+  {
+    slug: "diagnostic-plancher-montataire",
+    name: "01-plan-ph-rdc.png",
+    pdf: "Plan de structure  (1).pdf",
+    page: 1,
+    cropHeight: 2255,
+  },
+  {
+    slug: "diagnostic-plancher-montataire",
+    name: "02-ferraillage-dalle.png",
+    pdf: "Plan de structure  (1).pdf",
+    page: 7,
+    cropHeight: 1140,
+  },
+  {
+    slug: "reprise-ouverture-roubaix",
+    name: "01-coupe-existante.png",
+    pdf: "A4 Plan de Structure.pdf",
+    page: 1,
+    cropHeight: 1065,
+  },
+  {
+    slug: "reprise-ouverture-roubaix",
+    name: "02-coupe-projet.png",
+    pdf: "A4 Plan de Structure.pdf",
+    page: 2,
+    cropHeight: 1065,
+  },
+  {
+    slug: "plancher-scene-watremez-roubaix",
+    name: "01-plan-existant.png",
+    pdf: "Plans de structures (1).pdf",
+    page: 1,
+    cropHeight: 1620,
+  },
+  {
+    slug: "plancher-scene-watremez-roubaix",
+    name: "02-plan-projet.png",
+    pdf: "Plans de structures (1).pdf",
+    page: 2,
+    cropHeight: 1620,
+  },
+  {
+    slug: "extension-touquet-paris-plage",
+    name: "01-plan-fondation.png",
+    pdf: "A3 Plans structures (1).pdf",
+    page: 1,
+    cropHeight: 1575,
+  },
+  {
+    slug: "extension-touquet-paris-plage",
+    name: "02-coupe-a-a.png",
+    pdf: "A3 Plans structures (1).pdf",
+    page: 6,
+    cropHeight: 2255,
+  },
+  {
+    slug: "extension-touquet-paris-plage",
+    name: "03-photo-chantier.png",
+    pdf: "A4 Feraillages (1).pdf",
+    page: 2,
+    // rectangle crop instead of top-only crop: isolates the site photo
+    // from the calculation-hypothesis text block sharing the same page
+    crop: { left: 740, top: 1300, width: 710, height: 1180 },
+  },
 ];
 
 for (const job of jobs) {
@@ -113,7 +178,9 @@ for (const job of jobs) {
   if (job.rotate) {
     pipeline = pipeline.rotate(job.rotate);
   }
-  if (job.cropHeight) {
+  if (job.crop) {
+    pipeline = pipeline.extract(job.crop);
+  } else if (job.cropHeight) {
     const meta = await pipeline.clone().metadata();
     pipeline = pipeline.extract({ left: 0, top: 0, width: meta.width, height: job.cropHeight });
   }

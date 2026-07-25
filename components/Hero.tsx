@@ -126,7 +126,7 @@ export default function Hero() {
                     color: "#fff",
                   }}
                 >
-                  07
+                  11
                 </div>
                 <div
                   style={{

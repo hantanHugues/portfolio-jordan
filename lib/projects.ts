@@ -244,6 +244,137 @@ export const projects: Project[] = [
     highlight:
       "Le dossier le plus fourni du stage (11 planches) : de la démolition partielle de l'existant jusqu'aux détails d'ancrage millimétrés sur mur mitoyen.",
   },
+  {
+    slug: "diagnostic-plancher-montataire",
+    num: "08",
+    title: "Vérification de planchers existants pour une dalle coupe-feu",
+    location: "Montataire (60)",
+    year: "2026",
+    type: "Diagnostic structurel · bâtiment public",
+    tools: ["AutoCAD"],
+    cardLabel: "plan PH RDC existant",
+    cardImage: "/projets/diagnostic-plancher-montataire/01-plan-ph-rdc.png",
+    gallery: [
+      { src: "/projets/diagnostic-plancher-montataire/01-plan-ph-rdc.png", caption: "Plan PH RDC — existant" },
+      { src: "/projets/diagnostic-plancher-montataire/02-ferraillage-dalle.png", caption: "Ferraillage dalle — nappe inférieure / nappe supérieure" },
+    ],
+    summary:
+      "Vérification de la capacité portante de planchers existants d'un bâtiment public, pour permettre la mise en place d'une dalle béton coupe-feu sans compromettre la stabilité de l'ouvrage.",
+    context:
+      "Bâtiment municipal dont il fallait évaluer si les planchers existants (solives bois, poutrelles métalliques jumelées, poteaux béton armé) pouvaient recevoir une nouvelle dalle coupe-feu sans risque pour la structure.",
+    mission: [
+      "Analyse des caractéristiques du plancher existant à partir des relevés transmis par le maître de stage.",
+      "Détermination des charges permanentes et d'exploitation agissant sur la structure existante.",
+      "Calcul des sollicitations reprises par les éléments porteurs et vérification de leur compatibilité avec les nouvelles charges induites par la dalle coupe-feu.",
+      "Réalisation des plans techniques (existant / projet, coupes A-A et B-B) représentant les dispositions constructives retenues : nouveau plancher béton armé de 16 cm d'épaisseur, empochements dans le mur existant.",
+      "Réalisation des plans de ferraillage de la nouvelle dalle (nappe inférieure et nappe supérieure) sur AutoCAD.",
+    ],
+    deliverables: [
+      "Plan PH RDC — existant et projet",
+      "Coupes A-A et B-B, existant et projet",
+      "Ferraillage dalle — nappe inférieure et nappe supérieure",
+    ],
+    highlight:
+      "Un diagnostic plutôt qu'une conception neuve : vérifier qu'une structure existante (poteaux BA, poutrelles métalliques jumelées, planchers préfabriqués) peut absorber une charge supplémentaire sans compromettre sa stabilité.",
+  },
+  {
+    slug: "reprise-ouverture-roubaix",
+    num: "09",
+    title: "Reprise de désordres sur une ouverture existante",
+    location: "Roubaix (59)",
+    year: "2026",
+    type: "Diagnostic & renforcement structurel",
+    tools: ["AutoCAD"],
+    cardLabel: "coupe existant / projet",
+    cardImage: "/projets/reprise-ouverture-roubaix/01-coupe-existante.png",
+    gallery: [
+      { src: "/projets/reprise-ouverture-roubaix/01-coupe-existante.png", caption: "Coupe existante — poteaux et poutre bois à déposer" },
+      { src: "/projets/reprise-ouverture-roubaix/02-coupe-projet.png", caption: "Coupe projet — reprise en poteaux et poutre HEA 160" },
+    ],
+    summary:
+      "Diagnostic de désordres liés à la mauvaise qualité du bois sur une ouverture existante, et conception du renforcement par une structure métallique.",
+    context:
+      "Ouverture déjà réalisée dans un mur en bois existant (R+1), dont les investigations ont révélé une mauvaise qualité des éléments bois porteurs (poteaux et poutre) ainsi qu'une discontinuité des solives de plancher au droit de la poutre.",
+    mission: [
+      "Relevé de l'état existant : poteaux et poutre bois de 17×17 cm, absence d'entretoises entre les solives du plancher.",
+      "Conception de la reprise : remplacement des deux poteaux et de la poutre bois par des profilés métalliques HEA 160 soudés, sur platines chevillées au sol.",
+      "Ajout d'entretoises entre les solives pour améliorer leur stabilité, limiter les déformations et mieux répartir les charges du plancher.",
+      "Réalisation des coupes et vues en plan (existant / projet) sur AutoCAD, support à l'étude et à la préparation des travaux de renforcement.",
+    ],
+    deliverables: [
+      "Coupe sur ouverture — existante et projet",
+      "Vue en plan PH RDC — existante et projet",
+    ],
+    highlight:
+      "Reprise d'une structure bois défaillante par une ossature métallique HEA 160 soudée, avec ajout d'entretoises pour stabiliser des solives jusque-là discontinues au droit de la poutre.",
+  },
+  {
+    slug: "plancher-scene-watremez-roubaix",
+    num: "10",
+    title: "Charge d'exploitation admissible d'une scène de spectacle",
+    location: "Roubaix (59)",
+    year: "2026",
+    type: "Diagnostic structurel · établissement recevant du public",
+    tools: ["AutoCAD"],
+    cardLabel: "plancher voûté existant",
+    cardImage: "/projets/plancher-scene-watremez-roubaix/01-plan-existant.png",
+    gallery: [
+      { src: "/projets/plancher-scene-watremez-roubaix/01-plan-existant.png", caption: "Plancher haut sous-sol — existant" },
+      { src: "/projets/plancher-scene-watremez-roubaix/02-plan-projet.png", caption: "Plancher haut sous-sol — projet" },
+    ],
+    summary:
+      "Évaluation de la charge d'exploitation admissible de la scène d'une salle de spectacle municipale, et préconisation des adaptations structurelles nécessaires.",
+    context:
+      "Plancher voûté en sous-sol (solives bois massif sur poteaux métalliques IPN 180) supportant la scène d'une salle de spectacle communale, à vérifier vis-à-vis des exigences de sécurité et d'exploitation du bâtiment.",
+    mission: [
+      "Analyse de la structure existante : solives bois massif de 7,5×23,5 cm à entraxe de 50 cm, poteaux métalliques IPN 180, poutre limitée à un simple madrier de 75×225 mm.",
+      "Évaluation de la capacité portante de l'ensemble et détermination des charges d'exploitation admissibles pour l'usage scénique.",
+      "Préconisation des adaptations : remplacement des solives par des sections plus adaptées (20×40 et 25×40 cm), modification de leur entraxe, changement du sens de portée du plancher, remplacement des deux poteaux métalliques.",
+      "Réalisation des plans structurels (vues en plan et coupes A-A / B-B, existant / projet) et des détails d'exécution (achelets béton armé, platines soudées) sur AutoCAD.",
+    ],
+    deliverables: [
+      "Plan plancher haut sous-sol — existant et projet",
+      "Coupes A-A et B-B, existant et projet",
+      "Détail d'exécution — achelet béton armé et platine métallique",
+    ],
+    highlight:
+      "Le plus grand plancher étudié durant le stage : une voûte en solives bois massif de plus de 13 m de portée, au-dessus d'une salle de spectacle recevant du public.",
+  },
+  {
+    slug: "extension-touquet-paris-plage",
+    num: "11",
+    title: "Extension d'une habitation sur trois niveaux",
+    location: "Le Touquet-Paris-Plage (62)",
+    year: "2026",
+    type: "Extension · étude BA — sous-sol, RDC, combles",
+    tools: ["AutoCAD"],
+    cardLabel: "plan de fondation",
+    cardImage: "/projets/extension-touquet-paris-plage/01-plan-fondation.png",
+    gallery: [
+      { src: "/projets/extension-touquet-paris-plage/01-plan-fondation.png", caption: "Plan de fondation" },
+      { src: "/projets/extension-touquet-paris-plage/02-coupe-a-a.png", caption: "Coupe A-A — sous-sol, RDC et combles" },
+      { src: "/projets/extension-touquet-paris-plage/03-photo-chantier.png", caption: "Vue chantier — ferraillage du chaînage en fouille" },
+    ],
+    summary:
+      "Descente de charges et plans structurels complets d'une extension d'habitation sur trois niveaux : sous-sol, rez-de-chaussée et combles.",
+    context:
+      "Extension d'une habitation existante en R-1, RDC et combles, accolée à un bâtiment existant. Structure en poteaux-poutres béton armé, dalles alvéolaires et parpaings banchés, avec charpente à faîtage de 7 m sur les combles.",
+    mission: [
+      "Réalisation de la descente de charges de la nouvelle structure afin de vérifier la reprise des efforts sur l'ensemble des trois niveaux.",
+      "Traduction des solutions structurelles définies (poteaux, poutres, longrines et semelles isolées BA, dalles alvéolaires 16+5) en plans techniques précis sur AutoCAD.",
+      "Réalisation du plan de fondations, des plans de niveau (sous-sol, RDC, combles) et de trois coupes (A-A, B-B, C-C).",
+      "Réalisation des plans de ferraillage de dalle (nappes inférieure et supérieure).",
+    ],
+    deliverables: [
+      "Plan de fondations",
+      "Plans de niveau — sous-sol, RDC, combles",
+      "Coupes A-A, B-B et C-C",
+      "Ferraillage dalle — nappe inférieure et nappe supérieure",
+      "Photographie de chantier — ferraillage du chaînage",
+    ],
+    highlight:
+      "Le dossier le plus complet du stage (9 planches) : une structure sur trois niveaux menée de la descente de charges jusqu'aux plans de ferraillage, avec suivi photographique du chantier.",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
