@@ -2,7 +2,7 @@ import Image from "next/image";
 import CornerTicks from "./CornerTicks";
 
 const facts = [
-  { label: "Formation", value: "Licence 3 Génie Civil (en cours)" },
+  { label: "Formation", value: "Master 1 Génie Civil (en cours)" },
   { label: "Localisation", value: "Béthune · Mobilité nationale" },
   { label: "Spécialités", value: "Structure · Suivi de chantier" },
   { label: "Langues", value: "FR maternelle · EN scolaire" },
@@ -82,7 +82,7 @@ export default function About() {
               color: "#11223D",
             }}
           >
-            Étudiant en Licence 3 Génie Civil à l&apos;Université d&apos;Artois, à la recherche
+            Étudiant en Master 1 Génie Civil à l&apos;Université d&apos;Artois, à la recherche
             d&apos;une alternance — entre suivi de chantier, structures et méthode.
           </p>
           <p style={{ fontSize: 16, lineHeight: 1.75, color: "#48566B", margin: "0 0 18px" }}>

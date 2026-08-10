@@ -71,7 +71,7 @@ export default function Hero() {
                 margin: "0 0 36px",
               }}
             >
-              Étudiant en Licence Génie Civil, à la recherche d&apos;une alternance. Suivi de
+              Étudiant en Master Génie Civil, à la recherche d&apos;une alternance. Suivi de
               chantier, structures béton armé et métré — un aperçu de mes stages entre la France et
               le Maroc.
             </p>

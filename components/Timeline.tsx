@@ -7,15 +7,21 @@ const timeline = [
   },
   {
     year: "2026",
-    title: "Licence 3 — Génie Civil (en cours)",
+    title: "Master 1 — Génie Civil (en cours)",
     org: "Faculté des Sciences Appliquées, Université d'Artois, 62400",
-    desc: "Poursuite d'études en génie civil à l'Université d'Artois.",
+    desc: "Poursuite d'études en génie civil à l'Université d'Artois, après obtention de la licence.",
   },
   {
     year: "2025",
     title: "Licence d'université — Génie Civil",
     org: "Kénitra, Maroc",
-    desc: "Formation qualifiante en Qualité Hygiène et Sécurité (QHSE) à l'EMVIFBTP.",
+    desc: "Obtention de la licence en génie civil.",
+  },
+  {
+    year: "2025",
+    title: "Formation qualifiante — Qualité Hygiène Sécurité (QHSE)",
+    org: "EMVIFBTP, Maroc",
+    desc: "Formation complémentaire en Qualité Hygiène et Sécurité appliquée au secteur du BTP.",
   },
   {
     year: "2024",
