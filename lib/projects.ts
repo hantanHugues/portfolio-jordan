@@ -380,3 +380,41 @@ export const projects: Project[] = [
 export function getProjectBySlug(slug: string) {
   return projects.find((p) => p.slug === slug);
 }
+
+export type ProjectDocument = { label: string; src: string };
+
+const PLANS = "Plans de structure";
+const doc = (slug: string, file: string, label: string): ProjectDocument => ({
+  label,
+  src: `/documents/${slug}/${file}`,
+});
+
+const documentsBySlug: Record<string, ProjectDocument[]> = {
+  "maison-individuelle-fort-mahon-plage": [
+    doc("maison-individuelle-fort-mahon-plage", "plans-de-structure.pdf", PLANS),
+    doc("maison-individuelle-fort-mahon-plage", "plans-d-armatures.pdf", "Plans d'armatures"),
+  ],
+  "trois-ouvertures-guesnain": [
+    doc("trois-ouvertures-guesnain", "plans-de-structure.pdf", PLANS),
+    doc("trois-ouvertures-guesnain", "plans-de-ferraillage.pdf", "Plans de ferraillage"),
+  ],
+  "extension-ba-wannehain": [doc("extension-ba-wannehain", "plans-de-structure.pdf", PLANS)],
+  "charpente-bois-ronchin": [doc("charpente-bois-ronchin", "plans-de-structure.pdf", PLANS)],
+  "extension-ba-saint-python": [doc("extension-ba-saint-python", "plans-de-structure.pdf", PLANS)],
+  "reprise-structure-bois-lille": [doc("reprise-structure-bois-lille", "plans-de-structure.pdf", PLANS)],
+  "surelevation-maison-mitoyenne-lille": [
+    doc("surelevation-maison-mitoyenne-lille", "plans-de-structure.pdf", PLANS),
+    doc("surelevation-maison-mitoyenne-lille", "plan-du-chainage-ba.pdf", "Plan du chaînage BA 22 × 31,3 cm"),
+  ],
+  "diagnostic-plancher-montataire": [doc("diagnostic-plancher-montataire", "plans-de-structure.pdf", PLANS)],
+  "reprise-ouverture-roubaix": [doc("reprise-ouverture-roubaix", "plans-de-structure.pdf", PLANS)],
+  "plancher-scene-watremez-roubaix": [doc("plancher-scene-watremez-roubaix", "plans-de-structure.pdf", PLANS)],
+  "extension-touquet-paris-plage": [
+    doc("extension-touquet-paris-plage", "plans-de-structure.pdf", PLANS),
+    doc("extension-touquet-paris-plage", "carnet-de-ferraillage.pdf", "Carnet de ferraillage"),
+  ],
+};
+
+export function getProjectDocuments(slug: string): ProjectDocument[] {
+  return documentsBySlug[slug] ?? [];
+}

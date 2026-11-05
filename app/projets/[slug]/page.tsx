@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { projects, getProjectBySlug } from "@/lib/projects";
+import { projects, getProjectBySlug, getProjectDocuments } from "@/lib/projects";
 
 export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.slug }));
@@ -34,6 +34,7 @@ export default async function ProjectPage({
   if (!project) notFound();
 
   const index = projects.findIndex((p) => p.slug === slug);
+  const documents = getProjectDocuments(project.slug);
   const prev = projects[(index - 1 + projects.length) % projects.length];
   const next = projects[(index + 1) % projects.length];
 
@@ -314,15 +315,63 @@ export default async function ProjectPage({
                       flexShrink: 0,
                     }}
                   >
-                    PDF
+                    {String(i + 1).padStart(2, "0")}
                   </span>
                   <span style={{ fontSize: 15, color: "#11223D" }}>{item}</span>
                 </div>
               ))}
             </div>
+            {documents.length > 0 && (
+              <div style={{ marginTop: 28 }}>
+                <div
+                  style={{
+                    fontFamily: "var(--font-jetbrains), monospace",
+                    fontSize: 11,
+                    letterSpacing: "0.14em",
+                    textTransform: "uppercase",
+                    color: "#2E63C4",
+                    marginBottom: 12,
+                  }}
+                >
+                  Dossiers PDF
+                </div>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
+                  {documents.map((d) => (
+                    <a
+                      key={d.src}
+                      href={d.src}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contact-link"
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 10,
+                        fontSize: 14,
+                        color: "#11223D",
+                        textDecoration: "none",
+                        border: "1px solid #C3D4EC",
+                        borderRadius: 4,
+                        padding: "10px 14px",
+                      }}
+                    >
+                      <span
+                        style={{
+                          fontFamily: "var(--font-jetbrains), monospace",
+                          fontSize: 11,
+                          color: "#2E63C4",
+                        }}
+                      >
+                        PDF
+                      </span>
+                      {d.label} ↗
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
             <p style={{ fontSize: 13, lineHeight: 1.6, color: "#5C6B82", marginTop: 20 }}>
-              Extraits de plans ci-dessus ; dossier complet disponible sur demande (données de
-              localisation et de maîtrise d&apos;ouvrage anonymisées ici par confidentialité).
+              Extraits de plans ci-dessus ; les dossiers complets sont consultables en PDF.
             </p>
           </div>
         </section>
